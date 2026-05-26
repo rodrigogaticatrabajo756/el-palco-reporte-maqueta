@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reporte de mejoras - El Palco</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 18mm;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: #161616;
+      background: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.45;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .cover {
+      border-bottom: 5px solid #0b4f8a;
+      padding: 28px 0 22px;
+      margin-bottom: 26px;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: #0b4f8a;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      color: #101820;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      line-height: 1.05;
+    }
+
+    .subtitle {
+      max-width: 620px;
+      margin: 14px 0 0;
+      color: #555;
+      font-size: 16px;
+    }
+
+    h2 {
+      margin: 30px 0 10px;
+      color: #101820;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+      line-height: 1.2;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      margin: 20px 0 8px;
+      color: #101820;
+      font-size: 17px;
+    }
+
+    p {
+      margin: 0 0 10px;
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 0 0 7px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 16px 0 8px;
+    }
+
+    .box {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 14px;
+      background: #fafafa;
+    }
+
+    .box strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #101820;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .priority {
+      border-left: 5px solid #0b4f8a;
+      padding: 13px 16px;
+      background: #f3f8fd;
+      margin: 12px 0;
+    }
+
+    .roadmap {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    .roadmap th,
+    .roadmap td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .roadmap th {
+      color: #ffffff;
+      background: #101820;
+    }
+
+    .mock-preview {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 14px;
+      background: #fff;
+    }
+
+    .mock-top {
+      padding: 14px 18px;
+      color: #fff;
+      background: #101820;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .mock-logo {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+      font-weight: 700;
+    }
+
+    .mock-nav {
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+    .mock-hero {
+      display: grid;
+      grid-template-columns: 1.4fr .9fr;
+      gap: 14px;
+      padding: 18px;
+      background: #f5f5f2;
+    }
+
+    .mock-main,
+    .mock-side {
+      min-height: 160px;
+      padding: 16px;
+      color: #fff;
+      background: linear-gradient(135deg, #101820, #0b4f8a);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .mock-side {
+      min-height: 74px;
+      margin-bottom: 12px;
+      background: #2d3944;
+    }
+
+    .tag {
+      display: inline-block;
+      width: fit-content;
+      margin-bottom: 8px;
+      padding: 4px 7px;
+      color: #fff;
+      background: #0b4f8a;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .mock-title {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 23px;
+      line-height: 1.12;
+    }
+
+    .mock-side .mock-title {
+      font-size: 15px;
+    }
+
+    .note {
+      color: #666;
+      font-size: 13px;
+    }
+
+    .footer-note {
+      margin-top: 34px;
+      padding-top: 12px;
+      border-top: 1px solid #ddd;
+      color: #666;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="cover">
+      <p class="eyebrow">Reporte simple de diagnóstico y mejora</p>
+      <h1>El Palco</h1>
+      <p class="subtitle">Propuesta para potenciar la presentación digital del sitio, respetando su esencia actual y aprovechando la base sólida que ya tiene en WordPress.</p>
+    </section>
+
+    <section>
+      <h2>1. Diagnóstico General</h2>
+      <p>El sitio está construido sobre WordPress, una plataforma correcta para medios digitales porque permite publicar notas, ordenar secciones, administrar autores y trabajar SEO sin depender siempre de desarrollo a medida.</p>
+      <div class="summary-grid">
+        <div class="box">
+          <strong>Plataforma</strong>
+          WordPress con tema NewsMunch.
+        </div>
+        <div class="box">
+          <strong>Diseño</strong>
+          Maquetación de portal de noticias, con partes editadas mediante Elementor.
+        </div>
+        <div class="box">
+          <strong>SEO</strong>
+          Utiliza Yoast SEO, una buena base para posicionamiento.
+        </div>
+        <div class="box">
+          <strong>Rendimiento</strong>
+          Cuenta con LiteSpeed Cache, útil para mejorar velocidad de carga.
+        </div>
+      </div>
+      <p>La base técnica es adecuada y el sitio ya está bien encaminado. El objetivo no debería ser cambiarlo por completo, sino ajustar detalles de identidad, jerarquía editorial, marca, textos automáticos y terminación profesional.</p>
+    </section>
+
+    <section>
+      <h2>2. Puntos A Mejorar</h2>
+      <div class="priority">
+        <strong>Título de la home:</strong> actualmente aparece como "Home - El Palco". Conviene usar un título más editorial, por ejemplo "El Palco | Política bonaerense, legislatura y territorio".
+      </div>
+      <div class="priority">
+        <strong>Footer:</strong> quitar créditos del tema, completar columnas vacías, sumar redes reales y usar un correo institucional del dominio.
+      </div>
+      <div class="priority">
+        <strong>Idioma:</strong> reemplazar textos como "By" y "views" por "Por" y "lecturas".
+      </div>
+      <div class="priority">
+        <strong>Identidad:</strong> reforzar la estética propia con negro y distintos tonos de azul, manteniendo el espíritu actual del sitio.
+      </div>
+      <div class="priority">
+        <strong>Confianza:</strong> sumar páginas de "Quiénes somos", "Equipo", "Contacto", "Política editorial" y "Publicidad".
+      </div>
+    </section>
+
+    <section>
+      <h2>3. Propuesta Profesional</h2>
+      <ul>
+        <li>Reordenar la portada actual para que la noticia principal y las secundarias se lean con más claridad.</li>
+        <li>Usar una paleta sobria basada en negro editorial, blanco, grises y diferentes tonos de azul.</li>
+        <li>Mejorar las páginas de autor con foto, biografía breve, redes y archivo de notas.</li>
+        <li>Ordenar categorías para que funcionen como secciones periodísticas claras.</li>
+        <li>Optimizar imágenes, reducir plugins innecesarios y mantener activa la cache.</li>
+        <li>Crear metadatos correctos para compartir notas en redes sociales.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Plan De Implementación</h2>
+      <table class="roadmap">
+        <thead>
+          <tr>
+            <th>Etapa</th>
+            <th>Acción</th>
+            <th>Resultado esperado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Días 1 a 3</td>
+            <td>Ajustar SEO, footer, redes, correo, páginas institucionales y textos automáticos.</td>
+            <td>Mayor confianza y presentación más seria sin alterar la estructura principal.</td>
+          </tr>
+          <tr>
+            <td>Días 4 a 7</td>
+            <td>Ordenar la portada en WordPress/Elementor, respetando la esencia actual.</td>
+            <td>Home más clara, moderna y periodística, pero reconocible para el cliente.</td>
+          </tr>
+          <tr>
+            <td>Días 8 a 10</td>
+            <td>Mejorar autores, categorías, imágenes y estructura de notas.</td>
+            <td>Mejor experiencia de lectura y navegación.</td>
+          </tr>
+          <tr>
+            <td>Días 11 a 14</td>
+            <td>Medir velocidad, revisar plugins y ajustar detalles responsive.</td>
+            <td>Sitio más rápido y profesional en celular.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>5. Vista Propuesta</h2>
+      <p>La maqueta visual adjunta muestra una posible evolución: más editorial, más limpia y con tonos azules, pero sin alejarse demasiado de la estructura actual.</p>
+      <div class="mock-preview">
+        <div class="mock-top">
+          <div class="mock-logo">El Palco</div>
+          <div class="mock-nav">Inicio | Legislatura | Política | Territorio | Opinión</div>
+        </div>
+        <div class="mock-hero">
+          <div class="mock-main">
+            <span class="tag">Destacada</span>
+            <p class="mock-title">La agenda política bonaerense, contada desde el territorio</p>
+          </div>
+          <div>
+            <div class="mock-side">
+              <span class="tag">Legislatura</span>
+              <p class="mock-title">Claves de la semana en Diputados y Senado</p>
+            </div>
+            <div class="mock-side">
+              <span class="tag">Territorio</span>
+              <p class="mock-title">Municipios, poder local y rosca política</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="note">La maqueta no reemplaza al sitio final, pero sirve como guía visual para orientar cambios en WordPress.</p>
+    </section>
+
+    <section>
+      <h2>Conclusión</h2>
+      <p>El Palco ya tiene una base funcional y sólida. Para elevarlo, no hace falta empezar de cero: alcanza con profesionalizar la identidad, ordenar la portada, completar la información institucional, mejorar los detalles de idioma y optimizar la experiencia de lectura. Con apoyo técnico, este proceso puede resolverse en un plazo máximo de dos semanas.</p>
+    </section>
+
+    <p class="footer-note">Documento preparado como guía simple de presentación. Fecha: mayo de 2026.</p>
+  </main>
+</body>
+</html>

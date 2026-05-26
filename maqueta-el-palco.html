@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maqueta profesional - El Palco</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      overflow-x: hidden;
+    }
+
+    body {
+      margin: 0;
+      color: #151515;
+      background: #f6f6f3;
+      font-family: Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: #101820;
+      color: #ffffff;
+      font-size: 13px;
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar .wrap,
+    .brand-row,
+    .nav-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .topbar .wrap {
+      min-height: 38px;
+    }
+
+    .brand-row {
+      padding: 28px 0 24px;
+    }
+
+    .logo {
+      color: #101820;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(38px, 7vw, 74px);
+      font-weight: 800;
+      line-height: .9;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .tagline {
+      max-width: 330px;
+      color: #555;
+      font-size: 15px;
+      text-align: right;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-top: 1px solid #d7d7d2;
+      border-bottom: 1px solid #d7d7d2;
+      background: #ffffff;
+    }
+
+    .nav-row {
+      min-height: 54px;
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: #202020;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      min-width: 0;
+    }
+
+    .search {
+      width: 34px;
+      height: 34px;
+      border: 1px solid #cfcfca;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #0b4f8a;
+      font-weight: 700;
+    }
+
+    .breaking {
+      border-bottom: 1px solid #ddd;
+      background: #ffffff;
+    }
+
+    .breaking .wrap {
+      min-height: 46px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 14px;
+      flex-wrap: wrap;
+      padding: 8px 0;
+    }
+
+    .label {
+      padding: 7px 10px;
+      color: #ffffff;
+      background: #0b4f8a;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      padding: 30px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.45fr .9fr;
+      gap: 22px;
+      min-width: 0;
+    }
+
+    .lead,
+    .side-card,
+    .article-card {
+      position: relative;
+      overflow: hidden;
+      background: #222;
+      min-width: 0;
+    }
+
+    .lead {
+      min-height: 520px;
+      display: flex;
+      align-items: flex-end;
+      padding: 34px;
+      color: #fff;
+      background:
+        linear-gradient(180deg, rgba(16, 24, 32, .08), rgba(16, 24, 32, .96)),
+        url("https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=1400&q=80") center/cover;
+    }
+
+    .kicker {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 9px;
+      background: #0b4f8a;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      letter-spacing: 0;
+    }
+
+    .lead h1 {
+      max-width: 760px;
+      font-size: clamp(34px, 5.6vw, 68px);
+      line-height: .98;
+      overflow-wrap: anywhere;
+    }
+
+    .lead p {
+      max-width: 640px;
+      margin: 14px 0 0;
+      color: #ececec;
+      font-size: 18px;
+      line-height: 1.45;
+    }
+
+    .meta {
+      margin-top: 16px;
+      color: #d8d8d8;
+      font-size: 13px;
+    }
+
+    .side-stack {
+      display: grid;
+      gap: 22px;
+    }
+
+    .side-card {
+      min-height: 249px;
+      display: flex;
+      align-items: flex-end;
+      padding: 22px;
+      color: #ffffff;
+      background:
+        linear-gradient(180deg, rgba(16, 24, 32, .12), rgba(16, 24, 32, .94)),
+        url("https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=900&q=80") center/cover;
+    }
+
+    .side-card:nth-child(2) {
+      background:
+        linear-gradient(180deg, rgba(16, 24, 32, .12), rgba(16, 24, 32, .94)),
+        url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80") center/cover;
+    }
+
+    .side-card h2 {
+      font-size: 27px;
+      line-height: 1.05;
+      overflow-wrap: anywhere;
+    }
+
+    .section {
+      padding: 32px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      border-bottom: 3px solid #101820;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .section-head h2 {
+      font-size: 31px;
+    }
+
+    .section-head span {
+      color: #777;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      min-width: 0;
+    }
+
+    .article-card {
+      background: #ffffff;
+      border: 1px solid #ddd;
+    }
+
+    .article-card img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+    }
+
+    .article-body {
+      padding: 17px;
+    }
+
+    .article-body .kicker {
+      margin-bottom: 10px;
+      font-size: 10px;
+    }
+
+    .article-body h3 {
+      color: #101820;
+      font-size: 23px;
+      line-height: 1.1;
+      overflow-wrap: anywhere;
+    }
+
+    .article-body p {
+      color: #555;
+      line-height: 1.48;
+      margin: 10px 0 0;
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr 330px;
+      gap: 28px;
+      align-items: start;
+      min-width: 0;
+    }
+
+    .list-news {
+      background: #ffffff;
+      border-top: 1px solid #ddd;
+    }
+
+    .list-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 18px;
+      padding: 18px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .list-item img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .list-item h3 {
+      font-size: 25px;
+      line-height: 1.12;
+      overflow-wrap: anywhere;
+    }
+
+    .sidebar {
+      padding: 20px;
+      background: #101820;
+      color: #ffffff;
+    }
+
+    .sidebar h2 {
+      font-size: 27px;
+      margin-bottom: 14px;
+    }
+
+    .footer {
+      margin-top: 34px;
+      padding: 34px 0;
+      background: #101820;
+      color: #ffffff;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 28px;
+      min-width: 0;
+    }
+
+    .footer h2,
+    .footer h3 {
+      margin-bottom: 12px;
+    }
+
+    .footer p,
+    .footer li {
+      color: #d8d8d8;
+      line-height: 1.5;
+    }
+
+    .footer ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    @media (max-width: 1040px) {
+      .hero-grid,
+      .columns {
+        grid-template-columns: 1fr;
+      }
+
+      .side-stack,
+      .news-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .lead {
+        min-height: 430px;
+      }
+
+      .sidebar {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .brand-row,
+      .nav-row,
+      .topbar .wrap {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .tagline {
+        text-align: left;
+      }
+
+      .links {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 10px 16px;
+      }
+
+      .news-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .lead {
+        min-height: 460px;
+        padding: 24px;
+      }
+
+      .side-stack {
+        grid-template-columns: 1fr;
+      }
+
+      .list-item {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .wrap {
+        width: min(100% - 22px, 1180px);
+      }
+
+      .topbar .wrap,
+      .brand-row,
+      .nav-row {
+        gap: 10px;
+      }
+
+      .brand-row {
+        padding: 20px 0 18px;
+      }
+
+      .logo {
+        font-size: clamp(34px, 15vw, 52px);
+        line-height: .95;
+      }
+
+      .tagline {
+        max-width: none;
+        font-size: 14px;
+      }
+
+      .nav-row {
+        min-height: auto;
+        padding: 12px 0;
+      }
+
+      .links {
+        gap: 8px 12px;
+        font-size: 12px;
+      }
+
+      .search {
+        width: 32px;
+        height: 32px;
+      }
+
+      .breaking .wrap {
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 18px 0;
+      }
+
+      .hero-grid,
+      .side-stack,
+      .news-grid,
+      .columns,
+      .footer-grid {
+        gap: 16px;
+      }
+
+      .lead {
+        min-height: 360px;
+        padding: 18px;
+      }
+
+      .lead h1 {
+        font-size: clamp(30px, 12vw, 44px);
+        line-height: 1.02;
+      }
+
+      .lead p {
+        font-size: 15px;
+      }
+
+      .side-card {
+        min-height: 205px;
+        padding: 18px;
+      }
+
+      .side-card h2,
+      .section-head h2,
+      .sidebar h2 {
+        font-size: 25px;
+      }
+
+      .section {
+        padding: 24px 0;
+      }
+
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .article-body h3,
+      .list-item h3 {
+        font-size: 22px;
+      }
+
+      .footer {
+        margin-top: 22px;
+        padding: 28px 0;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .wrap {
+        width: min(100% - 18px, 1180px);
+      }
+
+      .links {
+        font-size: 11px;
+      }
+
+      .lead {
+        min-height: 330px;
+      }
+
+      .lead h1 {
+        font-size: 30px;
+      }
+
+      .article-body,
+      .sidebar {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <span>Martes 26 de mayo de 2026</span>
+      <span>Redaccion: redaccion@elpalco.com.ar</span>
+    </div>
+  </div>
+
+  <header class="wrap brand-row">
+    <a class="logo" href="#">El Palco</a>
+    <p class="tagline">Agenda politica, legislativa y social con mirada editorial propia. Buenos Aires. La Plata.</p>
+  </header>
+
+  <nav class="nav">
+    <div class="wrap nav-row">
+      <div class="links">
+        <a href="#">Inicio</a>
+        <a href="#">Legislatura</a>
+        <a href="#">Politica nacional</a>
+        <a href="#">Territorio bonaerense</a>
+        <a href="#">Opinion</a>
+        <a href="#">Equipo</a>
+      </div>
+      <a class="search" href="#" aria-label="Buscar">⌕</a>
+    </div>
+  </nav>
+
+  <section class="breaking">
+    <div class="wrap">
+      <span class="label">Ultimo momento</span>
+      <strong>Sesion clave en la Legislatura: negociaciones, proyectos y movimientos de bloque.</strong>
+    </div>
+  </section>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <article class="lead">
+          <div>
+            <span class="kicker">Destacada</span>
+            <h1>La agenda politica bonaerense, contada desde el territorio</h1>
+            <p>Una evolucion de la portada actual: mas orden visual, mejor jerarquia y la misma esencia periodistica de El Palco.</p>
+            <div class="meta">Por El Palco Redaccion · 26 mayo, 2026</div>
+          </div>
+        </article>
+
+        <div class="side-stack">
+          <article class="side-card">
+            <div>
+              <span class="kicker">Legislatura</span>
+              <h2>Claves de la semana en Diputados y Senado</h2>
+            </div>
+          </article>
+          <article class="side-card">
+            <div>
+              <span class="kicker">Territorio</span>
+              <h2>Municipios, poder local y rosca politica</h2>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Ultimas noticias</h2>
+          <span>Ver todas</span>
+        </div>
+        <div class="news-grid">
+          <article class="article-card">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="">
+            <div class="article-body">
+              <span class="kicker">Politica</span>
+              <h3>El Gobierno define su agenda tras una semana de alta tension</h3>
+              <p>Contexto, nombres propios y decisiones que ordenan la escena publica.</p>
+            </div>
+          </article>
+          <article class="article-card">
+            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80" alt="">
+            <div class="article-body">
+              <span class="kicker">Provincia</span>
+              <h3>Intendentes y legisladores reacomodan posiciones</h3>
+              <p>Una lectura territorial para seguir el pulso de Buenos Aires.</p>
+            </div>
+          </article>
+          <article class="article-card">
+            <img src="https://images.unsplash.com/photo-1575505586569-646b2ca898fc?auto=format&fit=crop&w=800&q=80" alt="">
+            <div class="article-body">
+              <span class="kicker">Senado</span>
+              <h3>Debates, comisiones y proyectos en movimiento</h3>
+              <p>Los temas legislativos explicados con lenguaje claro.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap columns">
+        <div>
+          <div class="section-head">
+            <h2>Periodismo no porteno</h2>
+            <span>Analisis</span>
+          </div>
+          <div class="list-news">
+            <article class="list-item">
+              <img src="https://images.unsplash.com/photo-1541872705-1f73c6400ec9?auto=format&fit=crop&w=700&q=80" alt="">
+              <div>
+                <span class="kicker">Analisis</span>
+                <h3>La politica bonaerense tambien se explica desde sus distritos</h3>
+                <p>Una seccion pensada para diferenciar al medio y reforzar su mirada propia.</p>
+              </div>
+            </article>
+            <article class="list-item">
+              <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=700&q=80" alt="">
+              <div>
+                <span class="kicker">Opinion</span>
+                <h3>Firma, contexto y lectura editorial para sumar profundidad</h3>
+                <p>Las notas con autor y bio elevan la confianza de los lectores.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <aside class="sidebar">
+          <h2>El Palco</h2>
+          <p>Agenda politica, legislativa y social con mirada editorial propia.</p>
+          <p>Buenos Aires. La Plata.</p>
+          <p>Un espacio para reforzar identidad, contacto institucional y secciones principales por el momento.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div>
+        <h2>El Palco</h2>
+        <p>Agenda politica, legislativa y social con mirada editorial propia. Buenos Aires. La Plata.</p>
+      </div>
+      <div>
+        <h3>Institucional</h3>
+        <ul>
+          <li>Quienes somos</li>
+          <li>Equipo</li>
+          <li>Politica editorial</li>
+          <li>Publicidad</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contacto</h3>
+        <p>redaccion@elpalco.com.ar</p>
+        <p>Instagram · X · YouTube · Facebook</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
