@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>El Palco - Reporte y maqueta</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      background: #f5f7fa;
+      color: #101820;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    main {
+      width: min(760px, calc(100% - 32px));
+      padding: 36px;
+      border: 1px solid #d9e2ec;
+      background: #ffffff;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: #0b4f8a;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(38px, 8vw, 68px);
+      line-height: .95;
+      letter-spacing: 0;
+    }
+
+    p {
+      max-width: 620px;
+      margin: 16px 0 0;
+      color: #4b5563;
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border: 1px solid #0b4f8a;
+      background: #0b4f8a;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    a.secondary {
+      background: #ffffff;
+      color: #0b4f8a;
+    }
+
+    @media (max-width: 520px) {
+      main {
+        padding: 24px;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      a {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Presentacion digital</p>
+    <h1>El Palco</h1>
+    <p>Reporte y maqueta visual para presentar una evolucion profesional del sitio, manteniendo su esencia actual y reforzando su identidad en negro y tonos azules.</p>
+    <div class="actions">
+      <a href="maqueta-el-palco.html">Ver maqueta HTML</a>
+      <a class="secondary" href="reporte-el-palco.pdf">Abrir reporte PDF</a>
+      <a class="secondary" href="reporte-el-palco.html">Ver reporte HTML</a>
+    </div>
+  </main>
+</body>
+</html>
