@@ -212,7 +212,73 @@ def build_pdf():
     for item in proposal_items:
         story.append(Paragraph(f"- {item}", styles["body"]))
 
-    story.append(Paragraph("4. Plan de implementacion", styles["h2"]))
+    story.append(Paragraph("4. Alcance del trabajo", styles["h2"]))
+    story.append(
+        Paragraph(
+            "El trabajo propuesto se enfoca en mejoras esteticas, editoriales y de presentacion sobre la estructura actual del sitio. No se plantea una reconstruccion completa ni el desarrollo de nuevas funcionalidades complejas.",
+            styles["body"],
+        )
+    )
+
+    scope_data = [
+        [
+            Paragraph("<b>Incluye</b>", styles["body"]),
+            Paragraph("<b>No incluye</b>", styles["body"]),
+        ],
+        [
+            Paragraph(
+                "- Revision estetica general del sitio.<br/>"
+                "- Ajustes de colores, espaciados, tipografias y jerarquia visual.<br/>"
+                "- Orden visual de la portada manteniendo la estructura actual.<br/>"
+                "- Revision responsive en celular, tablet y escritorio.<br/>"
+                "- Footer mas profesional y mejor organizado.<br/>"
+                "- Correccion de textos visibles del theme, como By o views.<br/>"
+                "- Ajustes basicos de SEO: titulo, descripcion y presentacion general.<br/>"
+                "- Revision de paginas institucionales simples.<br/>"
+                "- Acompanamiento durante el proceso y una instancia de revision final.",
+                styles["body"],
+            ),
+            Paragraph(
+                "- Desarrollo de funcionalidades nuevas.<br/>"
+                "- Sistemas de usuarios, membresias, pagos o suscripciones.<br/>"
+                "- Redaccion completa de notas periodisticas.<br/>"
+                "- Diseno de logo nuevo o identidad de marca desde cero.<br/>"
+                "- Campanas de publicidad paga.<br/>"
+                "- Mantenimiento mensual posterior.<br/>"
+                "- Carga masiva de contenido.<br/>"
+                "- Cambios estructurales profundos del theme.<br/>"
+                "- Hosting, dominio o costos de plugins pagos.",
+                styles["body"],
+            ),
+        ],
+    ]
+    scope = Table(scope_data, colWidths=[82 * mm, 82 * mm])
+    scope.setStyle(
+        TableStyle(
+            [
+                ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#101820")),
+                ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+                ("BACKGROUND", (0, 1), (-1, -1), colors.HexColor("#f7f7f7")),
+                ("BOX", (0, 0), (-1, -1), 0.5, colors.HexColor("#dddddd")),
+                ("INNERGRID", (0, 0), (-1, -1), 0.5, colors.HexColor("#dddddd")),
+                ("VALIGN", (0, 0), (-1, -1), "TOP"),
+                ("LEFTPADDING", (0, 0), (-1, -1), 9),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 9),
+                ("TOPPADDING", (0, 0), (-1, -1), 8),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+            ]
+        )
+    )
+    story.append(scope)
+    story.append(Spacer(1, 8))
+    story.append(
+        Paragraph(
+            "Si durante el proceso surge una necesidad fuera de este alcance, se conversa previamente y se cotiza aparte. Nada se implementa ni se cobra sin aprobacion.",
+            styles["body"],
+        )
+    )
+
+    story.append(Paragraph("5. Plan de implementacion", styles["h2"]))
     roadmap = Table(
         [
             ["Etapa", "Accion", "Resultado esperado"],
@@ -244,7 +310,7 @@ def build_pdf():
     story.append(roadmap)
 
     story.append(PageBreak())
-    story.append(Paragraph("5. Como podria quedar la portada", styles["h2"]))
+    story.append(Paragraph("6. Como podria quedar la portada", styles["h2"]))
     story.append(
         Paragraph(
             "La maqueta visual adjunta muestra una posible evolucion: mas editorial, mas limpia y con tonos azules, pero sin alejarse demasiado de la estructura actual.",
